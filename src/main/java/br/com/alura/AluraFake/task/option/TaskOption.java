@@ -13,5 +13,43 @@ public class TaskOption {
     private boolean isCorrect;
     @ManyToOne
     private Task task;
+
+    public TaskOption() {
+    }
+
+    public TaskOption(String text, boolean correct, Task task) {
+        this.optionText = text;
+        this.isCorrect = correct;
+        this.task = task;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+
+    public String getOptionText() {
+        return optionText;
+    }
+
+    public void setOptionText(String optionText) {
+        this.optionText = optionText;
+    }
+
+    public boolean isCorrect() {
+        return isCorrect;
+    }
+
+    public void setCorrect(boolean correct) {
+        isCorrect = correct;
+    }
+
+    public Task getTask() {
+        return task;
+    }
+
+    public void setTask(Task task) {
+        this.task = task;
+    }
 }
 
