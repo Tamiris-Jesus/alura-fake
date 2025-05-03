@@ -1,6 +1,7 @@
 package br.com.alura.AluraFake.course;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 public class CourseListItemDTO implements Serializable {
 
@@ -8,12 +9,14 @@ public class CourseListItemDTO implements Serializable {
     private String title;
     private String description;
     private Status status;
+    private LocalDateTime publishedAt;
 
     public CourseListItemDTO(Course course) {
         this.id = course.getId();
         this.title = course.getTitle();
         this.description = course.getDescription();
         this.status = course.getStatus();
+        this.publishedAt = course.getPublishedAt();
     }
 
     public Long getId() {
@@ -31,4 +34,9 @@ public class CourseListItemDTO implements Serializable {
     public Status getStatus() {
         return status;
     }
+
+    public LocalDateTime getPublishedAt() {
+        return publishedAt;
+    }
+
 }

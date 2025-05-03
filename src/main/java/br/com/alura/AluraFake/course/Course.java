@@ -32,6 +32,10 @@ public class Course {
         this.status = Status.BUILDING;
     }
 
+    public void setPublishedAt(LocalDateTime publishedAt) {
+        this.publishedAt = publishedAt;
+    }
+
     public Long getId() {
         return id;
     }
@@ -70,5 +74,9 @@ public class Course {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

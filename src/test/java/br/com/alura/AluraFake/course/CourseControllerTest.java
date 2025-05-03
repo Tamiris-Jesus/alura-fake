@@ -26,6 +26,8 @@ class CourseControllerTest {
     private CourseRepository courseRepository;
     @Autowired
     private ObjectMapper objectMapper;
+    @MockBean
+    private CourseService courseService;
 
     @Test
     void newCourseDTO__should_return_bad_request_when_email_is_invalid() throws Exception {
@@ -111,4 +113,23 @@ class CourseControllerTest {
                 .andExpect(jsonPath("$[2].description").value("Curso de spring"));
     }
 
+    @Test
+    void publishCourse__should_return_200_and_courseListItemDTO_when_successful() throws Exception {
+        Long courseId = 1L;
+        Course course = new Course();
+        course.setId(courseId);
+        course.setTitle("Java");
+        course.setDescription("Curso de Java");
+        course.setStatus(Status.BUILDING);
+
+        CourseListItemDTO dto = new CourseListItemDTO(course);
+        when(courseService.publishCourse(courseId)).thenReturn(dto);
+
+        mockMvc.perform(post("/course/{id}/publish", courseId))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.title").value("Java"))
+                .andExpect(jsonPath("$.description").value("Curso de Java"))
+                .andExpect(jsonPath("$.status").value("BUILDING")
+                );
+    }
 }
