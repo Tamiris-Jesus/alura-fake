@@ -1,8 +1,13 @@
 package br.com.alura.AluraFake.course;
 
-import br.com.alura.AluraFake.task.Task;
-import br.com.alura.AluraFake.task.TaskRepository;
-import br.com.alura.AluraFake.task.Type;
+import br.com.alura.AluraFake.domain.course.Course;
+import br.com.alura.AluraFake.domain.course.CourseRepository;
+import br.com.alura.AluraFake.domain.course.CourseService;
+import br.com.alura.AluraFake.domain.course.Status;
+import br.com.alura.AluraFake.domain.course.dto.CourseListItemDTO;
+import br.com.alura.AluraFake.domain.task.Task;
+import br.com.alura.AluraFake.domain.task.TaskRepository;
+import br.com.alura.AluraFake.domain.task.Type;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

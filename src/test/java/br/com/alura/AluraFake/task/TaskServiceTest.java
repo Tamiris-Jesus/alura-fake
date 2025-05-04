@@ -1,9 +1,16 @@
 package br.com.alura.AluraFake.task;
 
-import br.com.alura.AluraFake.course.Course;
-import br.com.alura.AluraFake.course.CourseRepository;
-import br.com.alura.AluraFake.course.Status;
-import br.com.alura.AluraFake.task.option.ChoiceOptionDTO;
+import br.com.alura.AluraFake.domain.course.Course;
+import br.com.alura.AluraFake.domain.course.CourseRepository;
+import br.com.alura.AluraFake.domain.course.Status;
+import br.com.alura.AluraFake.domain.task.Task;
+import br.com.alura.AluraFake.domain.task.TaskRepository;
+import br.com.alura.AluraFake.domain.task.TaskService;
+import br.com.alura.AluraFake.domain.task.Type;
+import br.com.alura.AluraFake.domain.task.dto.NewChoiceTaskDTO;
+import br.com.alura.AluraFake.domain.task.dto.NewOpenTextTaskDTO;
+import br.com.alura.AluraFake.domain.task.dto.TaskListDTO;
+import br.com.alura.AluraFake.domain.task.option.dto.ChoiceOptionDTO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
